@@ -1,6 +1,7 @@
 galaxy_info:
   author: rsanchez
+  description: Craft CLI
   license: license (MIT)
   min_ansible_version: 2
-  galaxy_tags: ["craft", "craftcms", "craft-cms", "craft-cli"]
+  galaxy_tags: ["craft", "craftcms", "craftcli"]
 dependencies: []
