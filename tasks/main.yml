@@ -1,0 +1,9 @@
+---
+- name: Get url of latest Craft CLI release
+  shell: curl --silent https://api.github.com/repos/rsanchez/craft-cli/releases/latest | /usr/bin/awk '/browser_download_url/ { print $2 }' | /usr/bin/sed 's/"//g'
+  register: latest_release
+- name: Download and install Craft CLI to /usr/local/bin.
+  get_url:
+    url: {{ latest_release.stdout }}
+    dest: /usr/local/bin/craft
+    mode: a+x
