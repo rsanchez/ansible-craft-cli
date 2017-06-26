@@ -5,6 +5,8 @@
   when: not craft_cli_version
 - name: Get url of latest Craft CLI release
   shell: echo "https://github.com/rsanchez/craft-cli/releases/download/$CRAFT_CLI_VERSION/craft.phar"
+  environment:
+    CRAFT_CLI_VERSION: {{ craft_cli_version }}
   register: download_url
   when: craft_cli_version
 - name: Download and install Craft CLI to /usr/local/bin.
